@@ -9,6 +9,8 @@ const router = express.Router();
 
 import User from '../models/userModel.js';
 
+import Order from '../models/orderModel.js';
+
 // Get all Users
 // GET @/api/users
 // Private
@@ -62,7 +64,16 @@ router.get('/:id', auth, (req, res) => {
    User.findById(req.params.id)
       .then((user) => {
          if (user) {
-            res.status(200).json(user);
+
+            Order.find({ user: req.params.id })
+               .sort({ createdAt: -1 })
+               .limit(3)
+               .then((order) => {
+                  res.status(200).json({orders: order, user: user})
+                 
+               })
+               .catch(() => res.status(400).json({ msg: 'An error occured!' }));
+
          } else {
             res.status(404).json({ msg: 'User does not exist!!!' });
          }
