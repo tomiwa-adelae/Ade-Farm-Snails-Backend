@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 import { auth } from '../middleware/auth.js';
-import Token from '../models/tokenModel.js';
 
 const router = express.Router();
 
@@ -208,30 +207,6 @@ router.post('/auth', (req, res) => {
    }
 });
 
-router.get('/:id/verify/:token', async (req, res) => {
-   try {
-      const user = await User.findById(req.params.id);
-      if (!user) return res.status(400).json({ msg: 'Invalid link!' });
-
-      const token = await Token.findOne({
-         userId: user._id,
-         token: req.params.token,
-      });
-      if (!token) return res.status(400).json({ msg: 'Invalid link!' });
-
-      User.findById(req.params.id).then((u) => {
-         u.verified = true;
-
-         u.save();
-      });
-
-      await token.remove();
-
-      res.status(200).send({ msg: 'Email verified successfully' });
-   } catch (err) {
-      return;
-   }
-});
 
 router.put('/', auth, (req, res) => {
    const {
