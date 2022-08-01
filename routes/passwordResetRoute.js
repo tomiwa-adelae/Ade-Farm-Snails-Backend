@@ -90,7 +90,7 @@ router.post('/', async (req, res) => {
                            RESET PASSWORD
                         </a>
                         <p>If you ignore this message, your password won't be changed.</p>
-                        <p>If you didn't initiate this process, you can safely ignore this message. We take your privacy very seriously at FamChatApp. </p>
+                        <p>If you didn't initiate this process, you can safely ignore this message. We take your privacy very seriously at Ade Farm Snails. </p>
                         <br />
                         <footer>Ade Farm Snails</footer>
                      </div>
