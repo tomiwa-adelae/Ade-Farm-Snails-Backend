@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import productRoute from './routes/productRoute.js';
 import userRoute from './routes/userRoute.js';
 import orderRoute from './routes/orderRoute.js';
 import uploadRoute from './routes/uploadRoute.js';
-import cors from 'cors';
+import passwordResetRoute from './routes/passwordResetRoute.js';
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.use('/api/products', productRoute);
 app.use('/api/users', userRoute);
 app.use('/api/orders', orderRoute);
 app.use('/api/uploads', uploadRoute);
+app.use('/api/password-reset', passwordResetRoute);
 
 const PORT = process.env.PORT || 5000;
 
