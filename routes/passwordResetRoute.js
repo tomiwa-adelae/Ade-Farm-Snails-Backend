@@ -67,7 +67,7 @@ router.post('/', async (req, res) => {
                      <div
                         style="background-color: #ffffff;
                         margin: auto;
-                        width: 50%;
+                        width: 70%;
                         padding: 1rem 2rem;
                         text-align: left;"
          
