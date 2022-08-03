@@ -1,2 +1,0 @@
-export const MAIL_JET_API_KEY = '37e885c3ff6ec0b8657b7210432cef55';
-export const MAIL_JET_SECRET_KEY = '20a5d14335269f6e8ea572e8ed8b2b6a';
