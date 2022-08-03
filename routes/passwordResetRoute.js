@@ -1,11 +1,11 @@
 import express from 'express';
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
-import { MAIL_JET_API_KEY, MAIL_JET_SECRET_KEY } from '../configs/keys.js';
+// import { MAIL_JET_API_KEY, MAIL_JET_SECRET_KEY } from '../configs/keys.js';
 import MailJet from 'node-mailjet';
 const mailjet = MailJet.apiConnect(
-   `${MAIL_JET_API_KEY}`,
-   `${MAIL_JET_SECRET_KEY}`
+   `7ffc58acc52f1f82f9a6539e4ad492cb`,
+   `1ee14ed6275fbbc106c6779ae905d200`
 );
 
 import User from '../models/userModel.js';
