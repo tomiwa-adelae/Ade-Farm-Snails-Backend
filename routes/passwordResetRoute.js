@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
             Messages: [
                {
                   From: {
-                     Email: 'adefarmsnail@gmail.com',
+                     Email: 'adelaetomiwa6@gmail.com',
                      Name: 'Ade Farm Snails',
                   },
                   To: [
